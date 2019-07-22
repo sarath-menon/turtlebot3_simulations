@@ -1,5 +1,5 @@
 <launch>
-  <arg name="burger"/>
+  <arg name="model" default="burger"/>
   <arg name="x_pos" default="0.0"/>
   <arg name="y_pos" default="0.0"/>
   <arg name="z_pos" default="0.0"/>
@@ -16,7 +16,6 @@
 
 
   <param name="robot_description" command="$(find xacro)/xacro.py $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
-  <param name="stage_number"  value="$(arg stage)"/>
   
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model turtlebot3_burger -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
   <node pkg="project" type="ddpg_stage_1.py" name="ddpg_stage_1" output="screen" />
