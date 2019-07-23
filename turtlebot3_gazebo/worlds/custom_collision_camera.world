@@ -30,7 +30,7 @@
      <sensor name='my_camera' type='camera'>
           <camera>
             <save enabled="true">
-              <path>/media/psf/Home/Desktop/project data/gazebo_videos</path>
+              <path>/home/catkin_ws/src/rl_cheap/src/project_videos</path>
             </save>
             <horizontal_fov>1.047</horizontal_fov>
             <image>
